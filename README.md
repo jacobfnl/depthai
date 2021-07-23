@@ -53,6 +53,7 @@ You don't want to use a separate OpenCV install in your virtual environment.
 pip install -r requirements.txt
 pip install -r requirements-optional.txt
 ```
+*!!! In future project **requirements.txt** files that may be downloaded from other projects, be sure to comment out any opencv installs!*
 
 ## Examples
 
