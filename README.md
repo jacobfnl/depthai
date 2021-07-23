@@ -4,12 +4,54 @@ This repo contains demo application, which can load different networks, create p
 
 __Documentation is available at [https://docs.luxonis.com/](https://docs.luxonis.com/).__
 
-## Python modules (Dependencies)
-
-DepthAI Demo requires [numpy](https://numpy.org/), [opencv-python](https://pypi.org/project/opencv-python/) and [depthai](https://github.com/luxonis/depthai-python).
-To get the versions of these packages you need for the program, use pip: (Make sure pip is upgraded: ` python3 -m pip install -U pip`)
+## Setting up the Raspberry Pi
+https://qengineering.eu has been extremely helpful for setting up the Pi. Their guides are well written and accurate.
+###1. OS
+Install the 64-bit OS: https://qengineering.eu/install-raspberry-64-os.html
+You'll want to make sure it is all updated after install.
 ```
-python3 install_requirements.py
+sudo apt update
+sudo apt upgrade -y
+```
+###2. GStreamer 1.18
+Again return to our friends at Q-engineering: https://qengineering.eu/install-gstreamer-1.18-on-raspberry-pi-4.html
+###3. OpenCV 4.5.x
+To get the Pi in the best OpenCV shape, we build it from source to fit our Pi installation.
+https://qengineering.eu/install-opencv-4.5-on-raspberry-64-os.html
+###4. Python Virtual Environment
+If you haven't already, go ahead and clone this repo into a target directory, for instance the Documents/ dir.
+```
+cd ~/Documents
+git clone https://github.com/jacobfnl/depthai.git
+cd depthai
+```
+Then, we'll make our Python virtual environment. In my case, I'm calling it oak.
+```
+python3 -m venv venv/oak --system-site-packages
+source venv/oak/bin/activate
+```
+Assuming everything went correctly, you should have OpenCV already installed in the virtual environment. 
+Entering python and importing cv2 should not prompt an error.
+```
+python
+import cv2
+```
+The result should look like this: 
+``` 
+Python 3.7.3 (default, Jan 22 2021, 20:04:44) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import cv2
+>>> 
+```
+You can exit with ctrl-d, or type `exit()` and press enter.
+###5. Install requirements
+While in the virtual env (you should see (oak) at the beginning of the terminal prompt), pip install the requirements.
+I've already commented out the OpenCV lines in this fork. 
+You don't want to use a separate OpenCV install in your virtual environment.
+```
+pip install -r requirements.txt
+pip install -r requirements-optional.txt
 ```
 
 ## Examples
