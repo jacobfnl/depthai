@@ -22,8 +22,8 @@ https://qengineering.eu/install-opencv-4.5-on-raspberry-64-os.html
 If you haven't already, go ahead and clone this repo into a target directory, for instance the Documents/ dir.
 ```
 cd ~/Documents
-git clone https://github.com/jacobfnl/depthai.git
-cd depthai
+git clone https://github.com/jacobfnl/depthai-raspberrypi4.git
+cd depthai-raspberrypi4
 ```
 Then, we'll make our Python virtual environment. In my case, I'm calling it oak.
 ```
