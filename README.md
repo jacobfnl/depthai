@@ -1,4 +1,4 @@
-# DepthAI API Demo Program
+# DepthAI API Demo Program for Raspberry Pi 4
 
 This repo contains demo application, which can load different networks, create pipelines, record video, etc.
 
