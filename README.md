@@ -46,10 +46,11 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```
 You can exit with ctrl-d, or type `exit()` and press enter.
 ###5. Install requirements
-While in the virtual env (you should see (oak) at the beginning of the terminal prompt), pip install the requirements.
+While in the virtual env (you should see (oak) at the beginning of the terminal prompt), pip install the requirements. To do so, you'll first need to upgrade pip.
 I've already commented out the OpenCV lines in this fork. 
 You don't want to use a separate OpenCV install in your virtual environment.
 ```
+pip install -U pip
 pip install -r requirements.txt
 pip install -r requirements-optional.txt
 ```
